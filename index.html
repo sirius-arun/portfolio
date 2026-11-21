@@ -123,7 +123,7 @@
   <section class="block" id="journey" data-say="roadmap" style="padding-bottom:0">
     <div class="tk"><span class="tk-id">ARU-101</span><span class="status s-prog">In progress</span><span class="tk-meta">Career journey</span></div>
     <h2 class="h2">The roadmap.</h2>
-    <p class="sub">Work, education, community and wins on one timeline. Keep scrolling and it moves sideways.</p>
+    <p class="sub">Work, education, community and wins on one timeline.<span class="desk-only"> Keep scrolling and it moves sideways.</span></p>
   </section>
   <div id="roadmap">
     <div class="stage">
@@ -137,6 +137,8 @@
       </div>
     </div>
   </div>
+
+  <div class="rm-mobile" id="rmMobile"><ol class="rmm-list" id="rmmList"></ol></div>
 
   <!-- ============ JOURNEY: RELEASE NOTES ============ -->
   <section class="block" id="releases" data-say="releases">
@@ -160,6 +162,19 @@
     <h3 class="h3">Earlier case studies</h3>
     <div class="archive" id="archiveList"></div>
     <a class="link-arrow" data-href="links.caseStudies" target="_blank" rel="noopener" data-case style="margin-top:18px">See all case studies in Notion ↗</a>
+  </section>
+
+  <!-- ============ COMMUNITY RESOURCE ============ -->
+  <section class="block" id="resource" data-say="resource" style="padding-top:40px">
+    <a class="resource" id="resourceCard" data-case target="_blank" rel="noopener">
+      <div class="res-body">
+        <div class="tk"><span class="tk-id">ARU-109</span><span class="status s-prog">Public resource</span><span class="tk-meta">Free · made for the community</span></div>
+        <h3 class="res-title" id="resTitle"></h3>
+        <p class="res-desc" id="resDesc"></p>
+        <span class="res-cta">Open the roadmap in Notion ↗</span>
+      </div>
+      <ol class="res-stages" id="resStages" aria-label="Roadmap stages"></ol>
+    </a>
   </section>
 
   <!-- ============ SKILLS: BACKLOG ============ -->
@@ -221,6 +236,7 @@
       <a data-href="links.github" target="_blank" rel="noopener">GitHub ↗</a>
       <a data-href="links.x" target="_blank" rel="noopener">X ↗</a>
       <a data-href="links.resume" target="_blank" rel="noopener" download>Resume ↓</a>
+      <a data-href="resource.url" target="_blank" rel="noopener">Free PM Roadmap ↗</a>
       <a id="footMail">Email</a>
     </nav>
   </div>

@@ -25,6 +25,8 @@
 
   const BUG_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="14" rx="5" ry="6.5" fill="var(--pop)"/><circle cx="12" cy="6.5" r="3" fill="currentColor"/><path d="M7 11 3 9M7 15H3M7 18l-3 2M17 11l4-2M17 15h4M17 18l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M12 8.5v12" stroke="currentColor" stroke-width="1" opacity=".55"/><circle cx="10" cy="12.5" r="1" fill="currentColor" opacity=".6"/><circle cx="14" cy="16" r="1" fill="currentColor" opacity=".6"/></svg>';
 
+  const isPhone = () => innerWidth <= 720;
+
   /* ================= RENDER ================= */
   $$('[data-c]').forEach(el => { const v = get(el.dataset.c); if (v != null) el.textContent = v; });
   $$('[data-href]').forEach(el => {
@@ -69,7 +71,7 @@
   /* Release notes */
   const pillName = { new: 'New', imp: 'Improved', fix: 'Fixed', ops: 'Ops' };
   $('#releaseList').innerHTML = C.releases.map((r, i) => `
-    <details class="rel"${i === 0 ? ' open' : ''}>
+    <details class="rel"${i === 0 && !isPhone() ? ' open' : ''}>
       <summary>
         ${logoSlot(r.logo, r.mono)}
         <span class="head"><b><span class="ver">${esc(r.v)}</span>${esc(r.org)}${r.current ? '<span class="cur">Current</span>' : ''}</b><small>${esc(r.role)} · ${esc(r.place)}</small></span>
@@ -90,7 +92,7 @@
         <dl><div><dt>Ticket</dt><dd>${esc(s.id)}</dd></div><div><dt>Type</dt><dd>${esc(s.type)}</dd></div><div><dt>Domain</dt><dd>${esc(s.domain)}</dd></div></dl>
       </div>
       <div class="case-body">
-        <span class="case-co">${esc(s.org)}</span>
+        <span class="case-co" data-type="${esc(s.type)}">${esc(s.org)}</span>
         <h3>${esc(s.title)}</h3>
         <p class="problem"><b>Problem:</b> ${esc(s.problem)}</p>
         <ul class="ac">${s.built.map(b => `<li>${esc(b)}</li>`).join('')}</ul>
@@ -109,6 +111,15 @@
       <span class="co"><span>${esc(a.org)}</span><span>CS-${String(i + 1).padStart(2, '0')} ↗</span></span>
       <b>${esc(a.t)}</b><span class="tag">${esc(a.tag)}</span>
     </a>`).join('');
+
+  /* Community resource */
+  if (C.resource && C.resource.url) {
+    const R0 = C.resource;
+    $('#resourceCard').href = R0.url;
+    $('#resTitle').innerHTML = `${esc(R0.title)} <span>${esc(R0.org)}</span>`;
+    $('#resDesc').textContent = R0.desc;
+    $('#resStages').innerHTML = R0.stages.map((st, i) => `<li style="--step:${i}"><b>${esc(st.name)}</b><small>${esc(st.level)}</small></li>`).join('');
+  } else { $('#resource').hidden = true; }
 
   /* Backlog */
   const prioIcon = p => {
@@ -173,7 +184,7 @@
   /* ================= FLOATING AVATAR ================= */
   const buddy = $('#buddy'), bubble = $('#bubble'), bt = $('#bubbleT'), avatar = $('#avatar');
   avatar.classList.add('avatar-bob');
-  let sayTimer, current = '', muted = false, lastSaid = '';
+  let sayTimer, hideT, current = '', muted = false, lastSaid = '';
   function say(html, force) {
     if (muted && !force) return;
     if (html === lastSaid && !force) return;
@@ -181,9 +192,11 @@
     bubble.classList.remove('hide');
     clearTimeout(sayTimer);
     if (force && !reduce) { avatar.classList.remove('react'); void avatar.offsetWidth; avatar.classList.add('react'); setTimeout(() => avatar.classList.remove('react'), 650); }
-    if (reduce) { bt.innerHTML = html; return; }
+    clearTimeout(hideT);
+    const tuck = () => { if (isPhone()) hideT = setTimeout(() => bubble.classList.add("hide"), 4000); };
+    if (reduce) { bt.innerHTML = html; tuck(); return; }
     bt.innerHTML = '<span class="typing" aria-hidden="true"><i></i><i></i><i></i></span>';
-    sayTimer = setTimeout(() => { bt.innerHTML = html; kickBuddy(); }, 650);
+    sayTimer = setTimeout(() => { bt.innerHTML = html; kickBuddy(); tuck(); }, 650);
     kickBuddy();
   }
   avatar.addEventListener('click', () => {
@@ -193,7 +206,7 @@
   });
 
   /* Which side of the screen the avatar sits on, per section. It glides across when this changes. */
-  const SIDE = { hero: 'right', roadmap: 'left', releases: 'right', shipped: 'left', archive: 'right', backlog: 'left', interviews: 'right', launch: 'left' };
+  const SIDE = { hero: 'right', roadmap: 'left', releases: 'right', shipped: 'left', archive: 'right', resource: 'left', backlog: 'right', interviews: 'left', launch: 'right' };
   let side = 'right', bx = innerWidth - 120, by = innerHeight + 40, vel = 0, lastScroll = scrollY, running = false;
   function buddyTarget() {
     const mobile = innerWidth < 720;
@@ -231,7 +244,7 @@
   }
 
   const sayEls = $$('[data-say]');
-  const NAV = { roadmap: 'journey', releases: 'journey', shipped: 'shipped', archive: 'shipped', backlog: 'backlog', interviews: 'interviews' };
+  const NAV = { roadmap: 'journey', releases: 'journey', shipped: 'shipped', archive: 'shipped', resource: 'shipped', backlog: 'backlog', interviews: 'interviews' };
   function pickSection() {
     const mid = innerHeight * 0.45; let best = sayEls[0];
     sayEls.forEach(s => { if (s.getBoundingClientRect().top < mid) best = s; });
@@ -239,7 +252,7 @@
     if (rm.top < mid && rm.bottom > mid) best = $('#journey');
     const key = best.dataset.say;
     if (key !== current) {
-      current = key; side = SIDE[key] || 'left'; say(C.buddy[key]); kickBuddy();
+      current = key; side = SIDE[key] || 'left'; say((isPhone() && C.buddy[key + 'Phone']) || C.buddy[key]); kickBuddy();
       $$('.nav-links a').forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + NAV[key]));
     }
   }
@@ -268,6 +281,20 @@
   R.milestones.forEach(ms => { h += `<div class="ms" style="top:${LANE_TOP[3] + 16}px;left:${px(mo(ms.d)) - 7}px"><span>${esc(ms.t)}</span></div>`; });
   track.innerHTML = h;
   wireImgs(track);
+  /* Phone: vertical timeline, newest first */
+  const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const fmt = ([y, m]) => `${MON[m - 1]} ${y}`;
+  const mItems = [
+    ...R.bars.map(b => ({ k: mo(b.s), b })),
+    ...R.milestones.map(m => ({ k: mo(m.d) - 0.5, m }))
+  ].sort((a, b) => b.k - a.k);
+  $('#rmmList').innerHTML = mItems.map(({ b, m }) => {
+    if (m) return `<li class="rmm-item rmm-win"><span class="dot"></span><div><span class="rmm-when">${fmt(m.d)}<span class="rmm-lane">Win</span></span><b>${esc(m.t)}</b></div></li>`;
+    if (b.next) return `<li class="rmm-item next"><span class="dot">🔒</span><div><span class="rmm-when">Next</span><b>${esc(b.title)}</b><small>${esc(b.sub)}</small></div></li>`;
+    const end = b.now ? 'Now' : fmt(b.e);
+    return `<li class="rmm-item">${logoSlot(b.logo, b.mono)}<div><span class="rmm-when">${fmt(b.s)} – ${end}<span class="rmm-lane${b.now ? ' now' : ''}">${esc(R.lanes[b.lane])}</span></span><b>${esc(b.title)}</b><small>${esc(b.sub)}</small></div></li>`;
+  }).join('');
+  wireImgs($('#rmmList'));
   const barEls = $$('.bar', track);
   let rmDone = false, lastBar = null;
   function updRoadmap(p) {
@@ -390,6 +417,7 @@
     { t: 'Open X', g: 'Social', url: C.links.x },
     ...C.shipped.map(s => live(s.link && s.link.url) ? { t: `Work: ${s.title}`, g: s.org, url: s.link.url, c: 1 } : { t: `Work: ${s.title}`, g: s.org, sec: '#shipped' }),
     ...C.archive.map(a => ({ t: `Case study: ${a.org}`, g: 'Notion', url: a.url, c: 1 })),
+    ...(C.resource && C.resource.url ? [{ t: 'Free PM Roadmap (beginner → advanced)', g: 'Resource', url: C.resource.url, c: 1 }] : []),
     { t: 'Go to: Journey (career + education)', g: 'Section', sec: '#journey' },
     { t: 'Go to: Experience in detail', g: 'Section', sec: '#releases' },
     { t: 'Go to: Skills', g: 'Section', sec: '#backlog' },
@@ -441,6 +469,8 @@
       io.unobserve(e.target);
     }), { threshold: 0.35 });
     io.observe($('#ivList')); io.observe($('#launchCard'));
+    const lastStop = $('#rmmList').lastElementChild;
+    if (lastStop) new IntersectionObserver((en, o) => en.forEach(e => { if (e.isIntersecting && isPhone()) { complete('roadmap'); o.disconnect(); } }), { threshold: 1 }).observe(lastStop);
   }
 
   /* ================= SCROLL LOOP ================= */

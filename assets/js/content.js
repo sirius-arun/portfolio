@@ -59,7 +59,8 @@ window.CONTENT = {
     "Languify transcription cost cut by 30%",
     "117 AI failures caught before users saw them",
     "Vouch is open source on GitHub",
-    "300+ member product community built at IIT (BHU)"
+    "300+ member product community built at IIT (BHU)",
+    "Free PM Roadmap, open to everyone"
   ],
 
   /* ---------- Roadmap (career trajectory) ---------- */
@@ -126,6 +127,7 @@ window.CONTENT = {
         ["new", "Thesis: Quantum Monte Carlo algorithms for risk assessment of geotechnical structures (Python, IBM Qiskit)."],
         ["new", "Launched IIT (BHU)'s chapter of The Product Folks by pitching its co-founder. Built a 15-member core team and a 300+ member community."],
         ["ops", "Led 15+ PM workshops and mentored 80+ students starting PM careers."],
+        ["new", "Built a free, public PM Roadmap (beginner → advanced) for the community."],
         ["imp", "Trained IIT (BHU)'s Inter IIT 13.0 contingent, which won Gold."]
       ]
     }
@@ -191,6 +193,19 @@ window.CONTENT = {
     { org: "Coca-Cola", t: "Logistics strategy to 2× daily volume and reach 20–30% CAGR", tag: "Ops strategy", url: "https://laser-carpet-c01.notion.site/Logistics-strategies-to-2X-daily-volume-manage-risks-in-line-with-achieving-a-target-of-20-30-CAGR-8bc16cc8f85d40688643041db1f2ee51" }
   ],
 
+  /* ---------- Community resource (featured card) ---------- */
+  resource: {
+    title: "The PM Roadmap",
+    org: "The Product Folks × IIT (BHU)",
+    desc: "A free, self-paced guide to breaking into product management. I built it for the 300+ students in our campus product community, and anyone can use it.",
+    url: "https://laser-carpet-c01.notion.site/TPF-X-IIT-BHU-PM-Roadmap-fb8708a488f742c2855fa646b15339f2",
+    stages: [
+      { name: "Emerge", level: "Beginner" },
+      { name: "Evolve", level: "Intermediate" },
+      { name: "Perform", level: "Advanced" }
+    ]
+  },
+
   /* ---------- Skills (backlog of work I can pick up) ---------- */
   backlog: [
     { p: "P0", t: "Ship a GenAI feature end to end", why: "Technical approach, prompt pipeline, prototype, UX, launch", tags: ["Prompt pipelines", "Prototyping", "Claude Code", "Python"], pts: 8 },
@@ -250,9 +265,11 @@ window.CONTENT = {
   buddy: {
     hero: "Hey, I'm Arunanshu 👋 This site is a product and you're the user. There's a site tour in the top bar if you want to earn some XP.",
     roadmap: "My roadmap. Keep scrolling and it moves sideways: mining engineer, then PM intern, now shipping GenAI.",
+    roadmapPhone: "My roadmap, newest first: from mining engineering at IIT (BHU) to shipping GenAI at VMock.",
     releases: "Release notes for every version of me. Expand one for the full changelog.",
     shipped: "Six things I've shipped. Each card shows the number I'd put on the launch slide.",
     archive: "Older case studies from competitions and teardowns. Opening one counts toward your tour.",
+    resource: "Breaking into product? I made this roadmap for my campus community. It is free, so take it 📚",
     backlog: "Skills, written as tickets you could hand me on day one. Psst, one of them has a bug in it 🐞",
     interviews: "Don't take my word for it. I interviewed people who managed me, and tagged the themes.",
     launch: "Every check passes. Book 15 minutes and let's see if we're a fit 🚀"
