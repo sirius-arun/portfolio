@@ -24,7 +24,7 @@ All text, links and image paths live in **`assets/js/content.js`**.
 
 ```
 assets/
-├── Arunanshu_Sinha_Resume.pdf   ← still to add
+(resume is linked from Google Drive: links.resume in content.js)
 ├── css/styles.css
 ├── js/content.js                ← all text + links
 ├── js/main.js
@@ -38,8 +38,8 @@ assets/
 **Naming rule for new images:** lowercase, no spaces (`new-logo.png`, not `New Logo.PNG`). GitHub Pages is case-sensitive, so a path that works on your Mac can break once it's online if the case doesn't match exactly.
 
 Still to do:
-- Add the resume PDF at `assets/Arunanshu_Sinha_Resume.pdf`.
-- Set `links.x` in `content.js`.
+
+
 - Add case study URLs in `shipped[].link.url` (empty shows "Write-up coming soon").
 
 ## Preview locally

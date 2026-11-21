@@ -18,10 +18,10 @@ window.CONTENT = {
   links: {
     email: "contactarunanshu@gmail.com",
     cal: "https://cal.com/arunanshu-sinha-nrgwad/15min",
-    resume: "assets/Arunanshu_Sinha_Resume.pdf",  // TODO: put the PDF at this path
+    resume: "https://drive.google.com/file/d/106ol-JQeZ4nRaJSuzCBHsh-K7v7_QIpH/view?usp=sharing",
     linkedin: "https://www.linkedin.com/in/arunanshu-sinha",
     github: "https://github.com/sirius-arun",
-    x: "TODO",                                    // TODO: e.g. "https://x.com/yourhandle"
+    x: "https://x.com/arunanshu_sinha",
     caseStudies: "https://laser-carpet-c01.notion.site/My-Case-Studies-21c862ead1aa49a19c598c19c71cf100"
   },
 
