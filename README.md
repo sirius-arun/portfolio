@@ -48,16 +48,16 @@ Open `index.html` in a browser. Or run `npx serve .` and visit the URL it prints
 
 ## Publish on GitHub Pages
 
-1. Create a repo on GitHub, ideally named `sirius-arun.github.io` (that gives you the root URL).
+1. Create a public repo on GitHub named `portfolio`. The site goes live at https://sirius-arun.github.io/portfolio/
 2. From this folder:
    ```bash
    git init
    git add .
    git commit -m "Portfolio v3.0"
    git branch -M main
-   git remote add origin https://github.com/sirius-arun/sirius-arun.github.io.git
+   git remote add origin https://github.com/sirius-arun/portfolio.git
    git push -u origin main
    ```
 3. On GitHub, go to **Settings → Pages → Build and deployment**. Choose **Deploy from a branch**, pick `main` and `/ (root)`, then save.
-4. The site goes live at `https://sirius-arun.github.io` in about a minute.
+4. The site goes live at `https://sirius-arun.github.io/portfolio/` in about a minute.
 5. Optional custom domain: add a `CNAME` file containing your domain, and point the domain's DNS at GitHub Pages.
