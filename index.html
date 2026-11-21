@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arunanshu Sinha · Product</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Arunanshu Sinha is a product person who builds. Mining engineer turned PM, IIT (BHU) '25. Career roadmap, shipped work, case studies and how to reach him.">
+<meta property="og:title" content="Arunanshu Sinha · Product">
+<meta property="og:description" content="A product person who builds. See the roadmap and what I've shipped, then book 15 minutes.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/avatar.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#E2B587">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23E2B587'/%3E%3Cpath d='M18 44 32 18l14 26' fill='none' stroke='%232B231D' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="assets/img/avatar.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&family=Caveat:wght@600;700&display=swap">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>try{var t=localStorage.getItem('aru-theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="gutter"><div class="wrap nav-in">
+    <a class="logo" href="#prd" aria-label="Back to top"><span class="logo-mark" aria-hidden="true">A<img data-fallback src="assets/img/avatar.jpg" alt=""></span><span class="logo-word">arunanshu<em>.pm</em></span></a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#journey">Journey</a><a href="#shipped">Work</a><a href="#backlog">Skills</a><a href="#interviews">Testimonials</a>
+    </nav>
+    <div class="nav-tools">
+      <button class="search-btn" id="openPal" aria-label="Search the site (Command K)">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span class="sb-label">Search</span><kbd>⌘K</kbd>
+      </button>
+      <button class="tour-pill" id="tourBtn" aria-expanded="false" aria-controls="tour" title="Site tour: earn XP as you explore">
+        <svg class="ring" viewBox="0 0 26 26" aria-hidden="true"><circle class="bg" cx="13" cy="13" r="10"/><circle class="fg" id="ringFg" cx="13" cy="13" r="10" stroke-dasharray="62.8" stroke-dashoffset="62.8" transform="rotate(-90 13 13)"/></svg>
+        <span class="tp-label">Site tour</span><span class="tp-count" id="tourCount">0/6</span>
+      </button>
+      <button class="theme-btn" id="themeBtn" aria-label="Switch to dark mode">
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 1 1 9.8 3.5a7 7 0 0 0 10.7 10.7z" fill="currentColor"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></g></svg>
+      </button>
+      <a class="btn primary sm nav-cta" href="#launch">Let's talk</a>
+    </div>
+  </div></div>
+  <div class="sprint" aria-hidden="true"><i id="sprint"></i></div>
+</header>
+
+<!-- ============ TOUR PANEL ============ -->
+<aside class="tour" id="tour" hidden aria-label="Site tour">
+  <div class="tour-top">
+    <div><span class="eyebrow">Site tour</span><h3 id="tourLevel">New visitor</h3></div>
+    <div class="tour-xp"><b id="tourXp">0</b><span>/ <span id="tourTotal">80</span> XP</span></div>
+  </div>
+  <div class="meter"><i id="meter"></i></div>
+  <ol class="quests" id="taskList"></ol>
+  <div class="tour-foot"><span id="tourHint">Explore the page to tick these off.</span><button class="linkish" id="tourReset">Reset</button></div>
+</aside>
+
+<main id="main">
+<div class="gutter"><div class="wrap">
+
+  <!-- ============ HERO / PRD ============ -->
+  <section class="hero" id="prd" data-say="hero">
+    <div class="hero-grid">
+      <article class="doc">
+        <div class="doc-bar"><span class="doc-title"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h6.5L13 5v9.5H3z" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>PRD · <span data-c="profile.name"></span></span><span class="grow"></span><span class="doc-ver">v3.0</span><span class="doc-edit">Last edited Nov 2026</span></div>
+        <div class="doc-body">
+          <dl class="props" id="props"></dl>
+          <h1 id="headline"></h1>
+          <p class="tagline" data-c="profile.tagline"></p>
+          <div class="prd-table">
+            <div><b>Overview</b><span data-c="prd.overview"></span></div>
+            <div><b>Built for</b><span data-c="prd.builtFor"></span></div>
+            <div><b>Core features</b><span class="features" id="features"></span></div>
+            <div class="metrics-row"><b>Success metrics</b><span class="metrics" id="metrics"></span></div>
+          </div>
+          <div class="ctas">
+            <a class="btn primary" data-href="links.cal" target="_blank" rel="noopener">Book a 15-min call <small>cal.com ↗</small></a>
+            <a class="btn" data-href="links.resume" target="_blank" rel="noopener" download>Download resume <small>PDF ↓</small></a>
+          </div>
+        </div>
+      </article>
+
+      <div class="side">
+        <figure class="shelf" aria-label="Trophy shelf">
+          <figcaption class="shelf-head"><span class="eyebrow">Trophy shelf</span><span class="shelf-hint">tap one</span></figcaption>
+          <div class="shelf-rows" id="shelf"></div>
+          <p class="shelf-cap" id="shelfCap" aria-live="polite">Gold, silver and bronze from national product and case competitions.</p>
+        </figure>
+
+        <div class="sticky-note" style="--r:-2deg">
+          <h3>Known bugs: 3</h3>
+          <p class="bug-demo">Look for this little guy <span class="bug-sample" aria-hidden="true" id="bugSample"></span></p>
+          <p>They're hiding around the page. Squash all 3 for +20 XP.</p>
+          <div class="bug-spot"><button class="bug" data-bug="1" aria-label="Squash bug"></button></div>
+        </div>
+
+        <div class="annot" id="annot">
+          <p>psst, that's me!<br><span>I'll comment as you scroll</span></p>
+          <svg class="annot-arrow" id="annotArrow" viewBox="0 0 90 40" aria-hidden="true"><path d="M4 26 C 24 4, 52 4, 80 20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M68 10 L 82 21 L 66 27" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+</div></div>
+
+<!-- ============ STATUS TICKER ============ -->
+<div class="ticker" aria-label="Recent launches and wins">
+  <span class="ticker-label"><i></i>Changelog</span>
+  <div class="ticker-track"><div class="ticker-row" id="ticker"></div></div>
+</div>
+
+<div class="gutter"><div class="wrap">
+
+  <!-- ============ JOURNEY: ROADMAP ============ -->
+  <section class="block" id="journey" data-say="roadmap" style="padding-bottom:0">
+    <div class="tk"><span class="tk-id">ARU-101</span><span class="status s-prog">In progress</span><span class="tk-meta">Career journey</span></div>
+    <h2 class="h2">The roadmap.</h2>
+    <p class="sub">Work, education, community and wins on one timeline. Keep scrolling and it moves sideways.</p>
+  </section>
+  <div id="roadmap">
+    <div class="stage">
+      <div class="rm">
+        <div class="rm-head"><span class="mono muted">Roadmap · Timeline view</span><span class="views"><span>Board</span><span class="on">Timeline</span><span>List</span></span></div>
+        <div class="rm-frame">
+          <div class="rm-labels" id="rmLabels"></div>
+          <div class="rm-track" id="rmTrack"></div>
+        </div>
+        <div class="rm-foot"><span class="mono muted">Now viewing</span><b id="rmRead"></b><span class="rm-prog"><i id="rmProg"></i></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ JOURNEY: RELEASE NOTES ============ -->
+  <section class="block" id="releases" data-say="releases">
+    <div class="tk"><span class="tk-id">ARU-102</span><span class="status s-ship">Released</span><span class="tk-meta">Experience + education, in detail</span></div>
+    <h2 class="h2">Release notes.</h2>
+    <p class="sub">The detail behind the roadmap. Each role is a version, and each line is a change that shipped.</p>
+    <div class="releases" id="releaseList"></div>
+  </section>
+
+  <!-- ============ WORK: SHIPPED ============ -->
+  <section class="block" id="shipped" data-say="shipped">
+    <div class="tk"><span class="tk-id">ARU-103</span><span class="status s-ship">Shipped</span><span class="tk-meta" id="shippedCount"></span></div>
+    <h2 class="h2">Shipped.</h2>
+    <p class="sub">What I've launched, closed out as tickets, each with the number I'd put on the launch slide.</p>
+    <div class="cases" id="cases"></div>
+  </section>
+
+  <!-- ============ WORK: ARCHIVE ============ -->
+  <section class="block" id="archive" data-say="archive" style="padding-top:24px">
+    <div class="tk"><span class="tk-id">ARU-104</span><span class="status s-done">Archived</span><span class="tk-meta">Case competitions + teardowns · Notion</span></div>
+    <h3 class="h3">Earlier case studies</h3>
+    <div class="archive" id="archiveList"></div>
+    <a class="link-arrow" data-href="links.caseStudies" target="_blank" rel="noopener" data-case style="margin-top:18px">See all case studies in Notion ↗</a>
+  </section>
+
+  <!-- ============ SKILLS: BACKLOG ============ -->
+  <section class="block" id="backlog" data-say="backlog">
+    <div class="tk"><span class="tk-id">ARU-105</span><span class="status s-p0">Ready for pickup</span><span class="tk-meta">Skills · what I can do for your team</span></div>
+    <h2 class="h2">Backlog.</h2>
+    <p class="sub">My skills, written as tickets you could hand me on day one. Points are honest effort estimates.</p>
+    <div class="backlog">
+      <div class="bl-head"><span>Priority</span><span>Ticket</span><span>Skills</span><span class="r">Pts</span></div>
+      <div id="backlogRows"></div>
+    </div>
+    <div class="tk" style="margin-top:56px"><span class="tk-id">ARU-106</span><span class="status s-ship">Connected</span><span class="tk-meta">Tools I use</span></div>
+    <h3 class="h3">Toolbox</h3>
+    <div class="integ" id="toolbox"></div>
+  </section>
+
+  <!-- ============ REFERENCES ============ -->
+  <section class="block" id="interviews" data-say="interviews">
+    <div class="tk"><span class="tk-id">ARU-107</span><span class="status s-ship">Synthesised</span><span class="tk-meta">Testimonials · n = 2 · both managed me</span></div>
+    <h2 class="h2">User interviews.</h2>
+    <p class="sub">What people who managed me said, with the themes pulled out the way I'd tag any interview.</p>
+    <div class="interviews" id="ivList"></div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="block" id="launch" data-say="launch">
+    <div class="tk"><span class="tk-id">ARU-108</span><span class="status s-ship">Go</span><span class="tk-meta">Contact · decision needed from you</span></div>
+    <h2 class="h2">Go / no-go.</h2>
+    <div class="launch" id="launchCard">
+      <div class="checks"><span class="eyebrow">Launch checklist</span><div id="checkList"></div></div>
+      <div class="go">
+        <span class="stamp" aria-hidden="true">GO</span>
+        <h3>Every check passes. Your call.</h3>
+        <p>Book 15 minutes and let's see if we're a fit, or send me a note.</p>
+        <div class="ctas"><a class="btn primary" data-href="links.cal" target="_blank" rel="noopener">Book a 15-min call <small>cal.com ↗</small></a></div>
+        <div class="contact-list">
+          <div class="cl"><a id="mailLink" class="cl-main"><span data-c="links.email"></span></a><button class="copy" id="copyMail">Copy</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div></div>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="gutter">
+  <div class="wrap foot">
+    <div class="foot-brand">
+      <a class="logo" href="#prd"><span class="logo-mark" aria-hidden="true">A<img data-fallback src="assets/img/avatar.jpg" alt=""></span><span class="logo-word">arunanshu<em>.pm</em></span></a>
+      <p>A product person who builds.</p>
+    </div>
+    <nav class="foot-col" aria-label="Footer: sections">
+      <span class="eyebrow">On this page</span>
+      <a href="#journey">Journey</a><a href="#releases">Experience</a><a href="#shipped">Work</a><a href="#backlog">Skills</a><a href="#interviews">Testimonials</a><a href="#launch">Contact</a>
+    </nav>
+    <nav class="foot-col" aria-label="Footer: elsewhere">
+      <span class="eyebrow">Elsewhere</span>
+      <a data-href="links.linkedin" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a data-href="links.github" target="_blank" rel="noopener">GitHub ↗</a>
+      <a data-href="links.x" target="_blank" rel="noopener">X ↗</a>
+      <a data-href="links.resume" target="_blank" rel="noopener" download>Resume ↓</a>
+      <a id="footMail">Email</a>
+    </nav>
+  </div>
+  <div class="wrap foot-base">
+    <span>© 2026 Arunanshu Sinha · v3.0</span>
+    <span class="known">Known issues: <button class="bug" data-bug="3" aria-label="Squash bug"></button><span id="issues">1 open</span></span>
+  </div>
+</footer>
+
+<!-- ============ QUICK-LINKS DOCK ============ -->
+<nav class="dock" aria-label="Quick links">
+  <a class="dock-i" data-href="links.linkedin" target="_blank" rel="noopener" data-tip="LinkedIn" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+  <a class="dock-i" data-href="links.github" target="_blank" rel="noopener" data-tip="GitHub" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg></a>
+  <a class="dock-i" data-href="links.x" target="_blank" rel="noopener" data-tip="X" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.66l-5.21-6.82-5.97 6.82H1.67l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64z"/></svg></a>
+  <span class="dock-sep" aria-hidden="true"></span>
+  <a class="dock-resume" data-href="links.resume" target="_blank" rel="noopener" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Resume</a>
+</nav>
+
+<!-- ============ FLOATING AVATAR ============ -->
+<div class="buddy" id="buddy" aria-live="polite">
+  <button class="avatar" id="avatar" aria-label="Show or hide Arunanshu's comments"><span class="av-fallback" id="avFallback"></span></button>
+  <div class="bubble" id="bubble">
+    <div class="bubble-h"><b data-c="profile.first"></b><span>commented · just now</span></div>
+    <div class="bubble-t" id="bubbleT"></div>
+  </div>
+</div>
+
+<!-- ============ ⌘K ============ -->
+<div class="overlay" id="overlay" hidden>
+  <div class="pal" role="dialog" aria-modal="true" aria-label="Command menu">
+    <div class="pal-in"><span aria-hidden="true" class="muted">⌕</span><input id="palIn" type="text" placeholder="Search links, work and sections…" aria-label="Search" autocomplete="off"><kbd>esc</kbd></div>
+    <ul id="palList" role="listbox"></ul>
+  </div>
+</div>
+<div class="toast hide" id="toast" role="status"></div>
+<canvas id="confetti" hidden></canvas>
+
+<noscript><p style="padding:24px">This site needs JavaScript for its interactive parts. Email: contactarunanshu@gmail.com</p></noscript>
+
+<script src="assets/js/content.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
